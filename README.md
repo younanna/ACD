@@ -13,6 +13,8 @@ Adaptive Contrastive Decoding in Retrieval-Augmented Generation for Handling Noi
 - Retriever: [Contriever-msmarco](https://github.com/facebookresearch/contriever) as a retriever
 
 ## Run
+> ⚠️ Should use transformers==4.44.0 (Otherwise, might need to fix generation/gen_wrapper.py
+
 Run <code>sh scripts/run.sh {gpu number} {task}</code>
 - <code>{gpu number}</code>: e.g. <code>'0'</code>
 - <code>{task}</code>: <code>'acd'</code> or <code>'naive'</code> (greedy decoding)
