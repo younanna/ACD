@@ -1,0 +1,33 @@
+seed: 1234
+
+dir:
+  model_cache: null
+  # save : config, generated results, logging
+  output_dir: ./results/ACD_results
+  offload_dir: null
+  hf_data_dir: null
+  custom_data_dir: null 
+
+candidates: 
+  model_name: [meta-llama/Llama-2-7b-hf, meta-llama/Llama-2-13b-hf, mistralai/Mistral-7B-v0.1, meta-llama/Meta-Llama-3-8B]
+  dataset_name: [nq, triviaqa, popqa, nqswap] 
+
+generation:
+  batch_size: 16
+  max_new_tokens: 32
+  overwrite: False
+
+model:
+  name: meta-llama/Llama-2-7b-hf
+  retriever: contriever-msmarco
+
+dataset:
+  name: nq
+  subset: -1
+  task: acd
+  n_shots: 5
+
+context:
+  naive: noContext
+  pos_context: contriever-msmarco-pos
+  neg_context: none
